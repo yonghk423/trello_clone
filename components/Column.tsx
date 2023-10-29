@@ -12,7 +12,7 @@ function Column({id, todos, index}: Props) {
             {(provided) => (
                 <div
                 {...provided.draggableProps}
-                {...provided.draggableProps}
+                {...provided.dragHandleProps}
                 ref={provided.innerRef}
                 >
                     {/* render droppable todos in the column */}
@@ -25,7 +25,8 @@ function Column({id, todos, index}: Props) {
                             snapshot.isDraggingOver ? "bg-green-200" : "bg-white/50"
                            }`} 
                            >
-                            
+                            <h2>{id}</h2>
+
                         </div>
                     )}
                     </Droppable>
