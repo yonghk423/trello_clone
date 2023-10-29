@@ -7,7 +7,7 @@ interface BoardState {
 
 export const useBoardStore = create<BoardState>((set) => ({
   board : {
-    columns: new Map<TypeedColumn, Column>() //new map?
+    columns: new Map<TypedColumn, Column>() //new map?
   },
   getBoard : async() => {
     const board = await getTodosGroupedByColumn();

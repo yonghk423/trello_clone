@@ -2,14 +2,14 @@ interface Board {
     columns : Map<TypeedColumn, Column>
 }
 
-type TypeedColumn = 'todo' | "inprogress" | 'done'
+type TypedColumn = 'todo' | "inprogress" | 'done'
 
 interface Column {
     id : TypeedColumn,
     todos : Todo[]
 }
 
-interface Todo {
+interface Todo extends Models.Document {
     $id: string;
     $createdAt: string;
     title: string;
@@ -21,3 +21,4 @@ interface Image {
     buckedtId: string;
     faileId: string;
 }
+
