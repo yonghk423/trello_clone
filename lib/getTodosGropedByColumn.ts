@@ -22,7 +22,6 @@ export const getTodosGroupedByColumn = async () => {
             status : todo.status,
             ...(todo.imagte && { image: JSON.parse(todo.image) })
         })
-
         return acc;
     } , new Map<TypedColumn, Column> )    
 
@@ -44,9 +43,9 @@ export const getTodosGroupedByColumn = async () => {
         Array.from(columns.entries()).sort(
             (a, b) => columnTypes.indexOf(a[0]) - columnTypes.indexOf(b[0])
         ))
-
+        console.log('sortedColumns' , sortedColumns)
     const board: Board = {
         columns: sortedColumns
     }
     return board;
-    }
+    } 
